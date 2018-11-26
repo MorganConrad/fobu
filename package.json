@@ -1,0 +1,31 @@
+{
+  "name": "fobu",
+  "version": "0.0.1",
+  "description": "Functional Object utilities",
+  "main": "fobu.js",
+  "scripts": {
+    "test": "nyc --reporter=lcov tape test/test.js",
+    "coverage": "nyc --reporter=text-lcov report | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MorganConrad/fobu.git"
+  },
+  "keywords": [
+    "object",
+    "functional",
+    "map",
+    "reduce"
+  ],
+  "devDependencies": {
+    "nyc": "^11.2.0",
+    "tape": "^4.6",
+    "coveralls": "^3.0"
+  },
+  "author": "Morgan Conrad <flyingspaniel@gmail.com> (http://flyingspaniel.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MorganConrad/fobu/issues"
+  },
+  "homepage": "https://github.com/MorganConrad/fobu#readme"
+}

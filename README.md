@@ -5,7 +5,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/MorganConrad/fobu/badge.svg)](https://coveralls.io/github/MorganConrad/fobu)
 
 # fobu
-Yet another set of utilities to do "functional programming" on JavaScript Objects.  You can find many other versions of these online.
+Yet another set of utilities to do "functional programming" on JavaScript Objects.  
+You can find many other versions of these online, but I like mine better :-).
 
 Basically, allows you to use the ES6 array methods like `map()` and `reduce()` on objects.
 
@@ -24,17 +25,17 @@ The user function will usually be called with three arguments, much like the arr
 For `reduce() and `reduceRight()`, the user function takes an additional `acc` first argument. 
 
 ### every(object, predicate)
-Tests if every key/value pair passes `predicate(key, value, object)`.  Returns true or false, and will "short-circuit".
+Tests if every key/value pair passes `predicate(value, key, object)`.  Returns true or false, and will "short-circuit".
 
 ### find(object, predicate)
-Finds the first key/value pair that passes `predicate(key, value, object)`.
+Finds the first key/value pair that passes `predicate(value, key, object)`.
  - returns it as an array: [key, value]
 
 ### filter(object, predicate)
-Creates a new object with (shallow) copies of all key/value pairs that pass `predicate(key, value, object)`.
+Creates a new object with (shallow) copies of all key/value pairs that pass `predicate(value, key, object)`.
 
 ### forEach(object, fn)
-Calls fn(key, value, object) for every key/value pair.
+Calls fn(value, key, object) for every key/value pair.
 
 ### map(object, fn)
 Returns a new result object, with result[key] = fn(object[key], key, object).
@@ -44,5 +45,5 @@ Returns a new result object, with result[key] = fn(object[key], key, object).
 ### reduceRight(object, fn, initialValue)
 
 ### some(object, predicate)
-Tests if any key/value pair passes `predicate(key, value, object)`.  Returns true or false, and will "short-circuit".
+Tests if any key/value pair passes `predicate(value, key, object)`.  Returns true or false, and will "short-circuit".
 

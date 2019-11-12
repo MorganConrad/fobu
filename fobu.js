@@ -1,64 +1,57 @@
 
 function every(object, predicate) {
-  let keys = Object.keys(object);
-  for (let key of keys) {
-    if (!predicate(object[key], key, object))
+  for (let [key,value] of Object.entries(object)) {
+    if (!predicate(value, key, object))
       return false;
   }
-  
+
   return true;
 }
 
 
 function find(object, predicate) {
-  let keys = Object.keys(object);
-  for (let key of keys) {
-    let value = object[key];
+  for (let [key,value] of Object.entries(object)) {
     if (predicate(value, key, object))
       return [key, value];
   }
-  
+
   return null;
 }
 
 
 function filter(object, predicate) {
-  let keys = Object.keys(object);
   let result = {};
-  for (let key of keys) {
-    let value = object[key];
+  for (let [key,value] of Object.entries(object)) {
     if (predicate(value, key, object))
       result[key] = value;
   }
-  
+
   return result;
 }
 
-  
+
 function forEach(object, fn) {
-  let keys = Object.keys(object);
-  for (let key of keys)
-    fn(object[key], key, object);
+  for (let [key,value] of Object.entries(object))
+    fn(value, key, object);
 }
 
 
 function map(object, fn) {
-  let keys = Object.keys(object);
   let result = {};
-  for (let key of keys)
-    result[key] = fn(object[key], key, object);
-  
+  for (let [key,value] of Object.entries(object))
+    result[key] = fn(value, key, object);
+
   return result;
 }
 
 
 function _reduce(object, keys, fn, initialValue) {
-  let acc = (initialValue != undefined) ? 
+  let acc = (initialValue != undefined) ?
              initialValue :
              object[keys.shift()];
   for (let key of keys)
     acc = fn(acc, object[key], key, object)
-  
+
   return acc;
 }
 

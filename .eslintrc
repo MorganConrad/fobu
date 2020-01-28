@@ -1,0 +1,77 @@
+// since eslint 6 made plugins a non-global PITA, this is
+// my .eslintrc extending from eslint:recommended
+
+{
+  "extends": "eslint:recommended",
+
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+
+  "globals": {
+    // allow read-only usage of these globals
+    "document": false,
+    "firebase": false,
+    "test": false, // Tape
+    "describe": false, // Jest globals
+    "it": false,
+    "expect": false
+  },
+
+  "rules": {
+
+    // possible errors  (most are covered by eslint:recommended)
+    "no-dupe-else-if": "error",
+
+    // Best Practices  @see https://eslint.org/docs/rules/#best-practices
+
+    "consistent-return": "error",
+    "curly": ["error", "multi-or-nest"],
+    "default-case": "error",
+    "default-param-last": 2,
+    "dot-notation": "warn",
+    "eqeqeq": ["error", "allow-null"],
+    "guard-for-in": "error",
+    "no-caller": "error",
+    "no-eval": "error",
+    "no-extend-native": "error",
+    "no-implicit-globals": 2,
+    "no-new-wrappers": "error",
+    "no-return-assign": "error",
+    "no-return-await": "error",
+    "no-throw-literal": "error",
+    "no-unused-expressions": "error",
+    "no-useless-concat": "error",
+    "prefer-promise-reject-errors": ["error", { "allowEmptyReject": true }],
+
+    // Variables   @see https://eslint.org/docs/rules/#variables
+
+    "no-shadow": "warn",
+    "no-undefined": "error",
+    "no-unused-vars": ["error", { "varsIgnorePattern": "gnored" }],
+
+    // Node rules
+
+    "no-path-concat": "error",
+
+    // Stylistic Issues  @see https://eslint.org/docs/rules/#stylistic-issues
+
+    "no-array-constructor": "error",
+    "no-new-object": "error",
+    "no-trailing-spaces": "error",
+    "no-use-before-define": ["error", "nofunc"],
+    "space-before-function-paren": ["error", "never"],
+
+    // ES6   @see https://eslint.org/docs/rules/#ecmascript-6
+
+    "arrow-parens": ["error", "always"],
+    "arrow-spacing": ["error", { "before": true, "after": true }],
+    "generator-star-spacing": ["error", "before"],
+    "no-confusing-arrow": 2,
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "yield-star-spacing": ["error", "before"]
+  }
+}

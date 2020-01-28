@@ -46,7 +46,7 @@ function map(object, fn) {
 
 
 function _reduce(object, keys, fn, initialValue) {
-  let acc = (initialValue != undefined) ?
+  let acc = (initialValue != null) ?
              initialValue :
              object[keys.shift()];
   for (let key of keys)

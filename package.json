@@ -1,6 +1,6 @@
 {
   "name": "fobu",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Functional Object utilities",
   "main": "fobu.js",
   "scripts": {
@@ -18,9 +18,9 @@
     "reduce"
   ],
   "devDependencies": {
-    "nyc": "^11.2.0",
-    "tape": "^4.6",
-    "coveralls": "^3.0"
+    "coveralls": "^3.0",
+    "nyc": "^15.0.0",
+    "tape": "^4.6"
   },
   "author": "Morgan Conrad <flyingspaniel@gmail.com> (http://flyingspaniel.com/)",
   "license": "MIT",
